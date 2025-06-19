@@ -1,0 +1,3 @@
+[submodule "ext/diora-sdk-open-source"]
+	path = ext/diora-sdk-open-source
+	url = https://gitlab.com/metanoia-comm/diora-sdk-open-source.git

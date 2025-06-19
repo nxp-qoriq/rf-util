@@ -1,4 +1,4 @@
-# Copyright 2021-2024 NXP
+# Copyright 2021-2025 NXP
 # NXP Proprietary. This software is owned or controlled by NXP and may only
 # be used strictly in accordance with the applicable license terms. By expressly accepting
 # such terms or by downloading, installing, activating and/or otherwise using
@@ -22,7 +22,7 @@ endif
 ifeq ($(PYTHON_INCLUDE),)
 PY_INCLUDE= -I/usr/include/python3.8 -I../../pyincludes
 else
-PY_INCLUDE=-I../../pyincludes -I${PYTHON_INCLUDE} -I${PYTHON_INCLUDE}/../
+PY_INCLUDE=-I../../pyincludes/aarch64-linux-gnu/python3.10 -I../../pyincludes/aarch64-linux-gnu  -I${PYTHON_INCLUDE} -I${PYTHON_INCLUDE}/../
 endif
 
 all : $(TARGET)

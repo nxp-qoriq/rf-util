@@ -11,11 +11,11 @@ CFLAGS  += -Wall
 
 LIB_DIR1 ?= ${PWD}/interface/rfapi
 LIB_DIR2 ?= ${PWD}/rflib
-LIB_DIR3 ?= ${PWD}/ext/rf_diora_sdk/lib
+LIB_DIR3 ?= ${PWD}/ext/diora-sdk-open-source/lib
 LIB_DIR4 ?= ${PWD}/interface/spi/
 
 INCLUDES += -I${PWD}/interface/rfapi/
-INCLUDES += -I${PWD}/ext/rf_diora_sdk/api
+INCLUDES += -I${PWD}/ext/diora-sdk-open-source/api
 
 SRCS_TEST := rf_api_unittest.c
 OBJS_TEST := $(SRCS_TEST:.c =.o)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022-2024 NXP
+ * Copyright 2022-2025 NXP
  */
 
 /*
@@ -180,7 +180,6 @@ err:
 }
 
 
-extern int firmload_ls[];
 
 int32_t diora_drv_close (void)
 {
@@ -197,7 +196,6 @@ int32_t diora_drv_close (void)
 			FR1_LOGMSG_INFO("memory unmap done\n");
             return MT3812_ERROR;
         }
-	    firmload_ls[0] = 0;
 		munmap((void *)rf_mdata[0], NX_MT_RF_SZ );
 		FR1_LOGMSG_INFO("memory unmap done\n");
 		close(fd);
@@ -1275,6 +1273,19 @@ int32_t diora_gen_get_property (uint32_t property, uint32_t len)
 	return rtc;
 }
 
+//#ifndef MT3812_BPACK
+#if 1
+int32_t diora_calib_bw (int32_t chan, int32_t freq_band, int32_t freq, int32_t rx_bw, int32_t tx_bw)
+{
+	FR1_LOGMSG_ERR("\tEINVAL: diora_calib_bw not supported\n");
+	return 0;
+}
+int32_t diora_calib_rxdc (int32_t *calib_rxdc_args, uint32_t calib_rxdc_args_size)
+{
+	FR1_LOGMSG_ERR("\tEINVAL: diora_calib_rxdc not supported\n");
+	return 0;
+}
+#else
 #define BUF_SZ 16384	// 16K
 c16   txbuf[BUF_SZ] __attribute__((section(".hram")));
 c16  txbuf2[BUF_SZ] __attribute__((section(".hram")));
@@ -1456,6 +1467,7 @@ int32_t diora_calib_rxdc (int32_t *calib_rxdc_args, uint32_t calib_rxdc_args_siz
 	
 	return rtc;
 }
+#endif
 
 int32_t fr1_rf_init (RF_FR1_CONFIG* config)
 {

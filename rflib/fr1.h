@@ -1,5 +1,5 @@
 /*
- * Copyright 2022-2024 NXP
+ * Copyright 2022-2025 NXP
  */
 
 /*
@@ -17,7 +17,6 @@
 
 #include <mt3812_drv.h>
 #include <mt3812_types.h>
-#include <mt3812_calib.h>
 #include <diora_osal.h>
 #include <diora_phal.h>
 
@@ -163,7 +162,6 @@ struct rf_dev_mdata {
         u32 flags_state;
         RFDevice_t nx_rf_dev;
         struct mt_mdata mt_mdata;
-        struct full_init_params_output full_init_params_output[MAX_FREQS];
         u32 log_level;
 };
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 NXP
+ * Copyright 2024-2025 NXP
  */
 
 /*
@@ -41,6 +41,11 @@ void   *diora_l1al_init (u32 id, struct dcparams* unused(params))/**< Initialize
 static int done = 0;
 
 error_t diora_l1al_trx (void * handle, c16 *outbuf, c16 *inbuf, u16 len, u16 chan)
+{
+    return 0;
+}
+
+error_t diora_l1al_trx_hs (void * handle, c16 *outbuf, c16 *inbuf, u16 len, u16 chan)
 {
     return 0;
 }

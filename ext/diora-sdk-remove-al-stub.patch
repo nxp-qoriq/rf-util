@@ -1,0 +1,20 @@
+diff --git a/Makefile b/Makefile
+index b5fd7fa..1ccdd90 100644
+--- a/Makefile
++++ b/Makefile
+@@ -35,7 +35,7 @@ INCLUDES := -Iapi -Idrv -Ifirmware
+ 
+ SRCS := drv/mt3812_cmdapi.c  drv/mt3812_cmdapi_optim.c drv/mt3812_drv.c
+ SRCS += firmware/fw_init_mem_R2_7_001.c firmware/fw_prog_mem_R2_7_001.c
+-SRCS += port/mt3812_phal.c port/mt3812_osal.c port/mt3812_l1al.c
++SRCS += port/mt3812_osal.c port/mt3812_l1al.c
+ 
+ OBJS := ${SRCS:.c=.o}
+ 
+@@ -49,4 +49,4 @@ dioralib: ${OBJS}
+ 	${CC} ${CFLAGS} ${INCLUDES}  $< -o $@
+ 
+ clean:
+-	rm -rf ${OBJS} lib
+\ No newline at end of file
++	rm -rf ${OBJS} lib
